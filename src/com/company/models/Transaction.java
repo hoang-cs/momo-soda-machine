@@ -1,11 +1,11 @@
 package com.company.models;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.UUID;
 
 public class Transaction {
     private final UUID id;
-    private LocalDateTime datetime;
+    private LocalDate datetime;
     private long moneyReceived;
     private Product product;
 
@@ -13,7 +13,7 @@ public class Transaction {
         this.id = UUID.randomUUID();
     }
 
-    public Transaction(LocalDateTime datetime, long moneyReceived, Product product) {
+    public Transaction(LocalDate datetime, long moneyReceived, Product product) {
         this.id = UUID.randomUUID();
         this.datetime = datetime;
         this.moneyReceived = moneyReceived;
@@ -24,11 +24,11 @@ public class Transaction {
         return id;
     }
 
-    public LocalDateTime getDatetime() {
+    public LocalDate getDatetime() {
         return datetime;
     }
 
-    public void setDatetime(LocalDateTime datetime) {
+    public void setDatetime(LocalDate datetime) {
         this.datetime = datetime;
     }
 

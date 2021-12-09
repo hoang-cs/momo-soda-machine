@@ -5,11 +5,13 @@ import com.company.models.Transaction;
 import com.company.models.ValidMoney;
 import com.company.view.MachineView;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
 
 public class TransactionController {
 
+    private final PromotionController promotionController;
     private final List<Long> moneyAccept;
     private final MachineView view;
     private final Menu menu;
@@ -17,6 +19,7 @@ public class TransactionController {
     private final Scanner input = new Scanner(System.in);
 
     public TransactionController() {
+        this.promotionController = new PromotionController();
         this.moneyAccept = ValidMoney.getAcceptInstance().getMoneyAccept();
         this.menu = Menu.getMenuInstance();
         this.view = new MachineView();
@@ -32,6 +35,8 @@ public class TransactionController {
             if (!isValidMoney)  continue;
 
             selectProduct(transaction);
+            System.out.println();
+            System.out.println();
         }
 
     }
@@ -105,7 +110,9 @@ public class TransactionController {
     public void releaseProduct(Transaction transaction){
         if (transaction != null) {
             String productInfo = transaction.getProduct().toString();
+            transaction.setDatetime(LocalDate.now());
             view.displayProductMsg(productInfo);
+            promotionController.addTransaction(transaction);
         }
     }
 
