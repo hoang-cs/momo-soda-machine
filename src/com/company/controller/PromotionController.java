@@ -13,7 +13,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class PromotionController {
-    private List<Transaction> transactions;
+    private final List<Transaction> transactions;
     private final Promotion promoInfo;
     private final MachineView view;
     private final Random random;
@@ -32,10 +32,10 @@ public class PromotionController {
     public void addTransaction(Transaction transaction){
 
         // check if the new transaction's date is different from previous transaction's
+        // => new day
         if (transaction.getDatetime().isAfter(date)) {
             this.promoInfo.newDay();
             this.date = LocalDate.now();
-            this.transactions = new ArrayList<>();
         }
 
         transactions.add(transaction);
@@ -87,7 +87,6 @@ public class PromotionController {
             if (!curProductName.equals(nextProductName))
                 return false;
         }
-        System.out.println("consecutive");
         return true;
     }
 
@@ -106,7 +105,6 @@ public class PromotionController {
     // otherwise, return false
     public boolean isYourLuckyDay(){
         int num = random.nextInt(100);
-        System.out.println(num);
 
         return num / 100.0 < promoInfo.getWinRate() && promoInfo.getLimitBudget() != 0;
     }

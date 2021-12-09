@@ -1,5 +1,6 @@
 package com.company.models;
 
+//
 public class Promotion {
 
     public static final int CONSECUTIVE = 3;

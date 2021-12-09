@@ -57,7 +57,7 @@ public class MachineView {
     }
 
     public void displayRemainChangeMsg(long refund){
-        System.out.println("Your remaining change: " + refund);
+        System.out.println("Your remaining change: " + refund + " VND");
     }
 
     public void displayRefundMoneyMsg(long moneyReceived){
