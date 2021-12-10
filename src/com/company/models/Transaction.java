@@ -1,27 +1,14 @@
 package com.company.models;
 
 import java.time.LocalDate;
-import java.util.UUID;
 
 public class Transaction {
-    private final UUID id;
-    private LocalDate datetime;
     private long moneyReceived;
+    private LocalDate datetime;
     private Product product;
 
     public Transaction() {
-        this.id = UUID.randomUUID();
-    }
 
-    public Transaction(LocalDate datetime, long moneyReceived, Product product) {
-        this.id = UUID.randomUUID();
-        this.datetime = datetime;
-        this.moneyReceived = moneyReceived;
-        this.product = product;
-    }
-
-    public UUID getId() {
-        return id;
     }
 
     public LocalDate getDatetime() {

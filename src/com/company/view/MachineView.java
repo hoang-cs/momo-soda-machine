@@ -102,6 +102,7 @@ public class MachineView {
         while(second != 0){
             System.out.println("Continue in " + second + " second(s)");
             second--;
+
             try{
                 Thread.sleep(1000);
             }catch (Exception e){

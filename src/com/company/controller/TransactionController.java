@@ -26,7 +26,7 @@ public class TransactionController {
     }
 
 
-    // create a loop to handle all requests from customer
+    // create an infinite loop to handle all requests from customer
     public void startMachine(){
         while (true){
             Transaction transaction = new Transaction();
@@ -35,8 +35,6 @@ public class TransactionController {
             if (!isValidMoney)  continue;
 
             selectProduct(transaction);
-            System.out.println();
-            System.out.println();
         }
 
     }
@@ -106,7 +104,7 @@ public class TransactionController {
         }
     }
 
-    // drop the product and display its info
+    // dropdown the chosen product and display its info
     public void releaseProduct(Transaction transaction){
         if (transaction != null) {
             String productInfo = transaction.getProduct().toString();

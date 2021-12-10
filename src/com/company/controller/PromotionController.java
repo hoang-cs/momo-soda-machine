@@ -55,6 +55,7 @@ public class PromotionController {
 
         do{
             try{
+                // read the customer's choice and get the corresponding product
                 choice = Integer.parseInt(input.nextLine());
                 Product luckyProduct = luckyProducts.get(choice-1);
                 view.displayFreeProductMsg(luckyProduct.getName());
@@ -73,6 +74,7 @@ public class PromotionController {
         if (this.transactions.size() < Promotion.CONSECUTIVE)
             return false;
 
+        // number of products exceed 3
         if (this.transactions.size() > Promotion.CONSECUTIVE)
             transactions.remove(0);
 

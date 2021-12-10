@@ -1,6 +1,7 @@
 package com.company.models;
 
-//
+// A class used for storing all information about promotion
+// using Singleton DP
 public class Promotion {
 
     public static final int CONSECUTIVE = 3;
@@ -10,7 +11,7 @@ public class Promotion {
     private static Promotion promotionInstance;
 
 
-    public Promotion(){
+    private Promotion(){
         newDay();
     }
 
@@ -27,9 +28,6 @@ public class Promotion {
     public long getLimitBudget(){
         return this.limitBudget;
     }
-
-    // return true if the budget is enough to give away a product
-    // otherwise, return false
     public void decreaseBudget(long dec){
         this.limitBudget -= dec;
     }
