@@ -16,6 +16,7 @@ Truong Viet Hoang
 |-- .gitignore
 |-- .idea
 |-- com.company
+    |-- Main.java
     |-- models
         |-- Menu.java
         |-- Product.java
@@ -29,3 +30,4 @@ Truong Viet Hoang
         |-- TransactionController.java
 
 ```
+* Run the main method inside Main.java to active the machine
